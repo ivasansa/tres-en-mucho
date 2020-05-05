@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [page] = useState(1);
+  useEffect(() => {
+    fetch(
+      `https://maricarmen-app.herokuapp.com/`,
+      {
+        method: "GET",
+        headers: new Headers({
+        })
+      }
+    )
+      .then(res => res.json())
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => console.log(error));
+  }, [page]);
+
   return (
     <div className="App">
       <header className="App-header">
