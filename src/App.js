@@ -6,7 +6,7 @@ function App() {
   const [page] = useState(1);
   useEffect(() => {
     fetch(
-      `https://tresenmucho.lamaricarmen.es/`,
+      `/`,
       {
         method: "GET",
         headers: new Headers({
@@ -24,7 +24,7 @@ function App() {
     e.preventDefault();
     console.log('The link was clicked.');
       fetch(
-        `https://tresenmucho.lamaricarmen.es/play`,
+        `/play`,
         {
           method: "POST",
           headers: new Headers({
