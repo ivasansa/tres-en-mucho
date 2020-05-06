@@ -20,6 +20,25 @@ function App() {
       .catch(error => console.log(error));
   }, [page]);
 
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+      fetch(
+        `https://maricarmen-app.herokuapp.com/play`,
+        {
+          method: "POST",
+          headers: new Headers({
+          })
+        }
+      )
+        .then(res => res.json())
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => console.log(error));
+    }
+  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -27,14 +46,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={handleClick}>clickme</button>
       </header>
     </div>
   );
